@@ -6,26 +6,21 @@
 
   <groupId>org.actframework.demo</groupId>
   <artifactId>i18n</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.8.22</version>
 
   <name>My Awesome Application</name>
 
   <parent>
     <groupId>org.actframework</groupId>
     <artifactId>act-starter-parent</artifactId>
-    <version>1.8.7.0</version>
+    <version>1.8.22.0</version>
   </parent>
 
   <properties>
-    <app.entry>org.actframework.demo.AppEntry</app.entry>
+    <app.entry>demo.i18n.AppEntry</app.entry>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.actframework</groupId>
-      <artifactId>act</artifactId>
-      <version>1.8.8-SNAPSHOT</version>
-    </dependency>
   </dependencies>
 
 </project>
