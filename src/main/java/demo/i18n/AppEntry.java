@@ -21,19 +21,6 @@ import java.util.Date;
 @SuppressWarnings("unused")
 public class AppEntry extends Controller.Util {
 
-    /**
-     * The home (`/`) endpoint.
-     *
-     * This will accept a query parameter named `who` and
-     * render a template (resources/rythm/__package__/AppEntry/home.html),
-     * where `__package__` corresponding to the package name, e.g.
-     * if your package is `com.mycomp.myproj`, then `__package__`
-     * is `com/mycomp/myproj`.
-     *
-     * @param who
-     *      request query parameter to specify the hello target.
-     *      default value is `World`.
-     */
     @GetAction
     public void home(@DefaultValue("World") String who) {
         Date javaDate = new Date();
@@ -42,6 +29,16 @@ public class AppEntry extends Controller.Util {
         LocalDate localDate = LocalDate.now();
         LocalTime localTime = LocalTime.now();
         render(who, javaDate, dateTime, localDateTime, localDate, localTime);
+    }
+
+    @GetAction("beetl")
+    public void beetlHome(@DefaultValue("World") String who) {
+        Date javaDate = new Date();
+        DateTime dateTime = DateTime.now();
+        LocalDateTime localDateTime = LocalDateTime.now();
+        LocalDate localDate = LocalDate.now();
+        LocalTime localTime = LocalTime.now();
+        render("beetlHome", who, javaDate, dateTime, localDateTime, localDate, localTime);
     }
 
     public static void main(String[] args) throws Exception {
