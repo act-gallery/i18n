@@ -23,7 +23,7 @@ unzip *.zip
 
 Once you started, navigate your browser to `http://localhost:5460` to play with the demo:
 
-![demo-image](demo.gif)
+![demo](https://user-images.githubusercontent.com/216930/66711259-2b7d6a80-edd4-11e9-89fc-da2f0985e202.gif)
 
 ## Support [I18n and I10n](https://www.w3.org/International/questions/qa-i18n) in Actframework
 
