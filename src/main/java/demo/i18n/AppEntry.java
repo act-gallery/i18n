@@ -7,6 +7,9 @@ import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 import org.joda.time.LocalTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.osgl.$;
 import org.osgl.mvc.annotation.GetAction;
 
 import java.util.Date;
@@ -43,6 +46,10 @@ public class AppEntry extends Controller.Util {
 
     public static void main(String[] args) throws Exception {
         Act.start();
+//        DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/yyyy h:mm:s a");
+//        DateTimeFormatter f2 = DateTimeFormat.mediumDateTime();
+//        System.out.println(fmt.print(DateTime.now().minusDays(10)));
+//        System.out.println(f2.print(DateTime.now().minusDays(10)));
     }
 
 }
