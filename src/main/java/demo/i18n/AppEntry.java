@@ -1,6 +1,7 @@
 package demo.i18n;
 
 import act.Act;
+import act.app.ActionContext;
 import act.controller.Controller;
 import act.inject.DefaultValue;
 import org.joda.time.DateTime;
@@ -11,7 +12,10 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.osgl.$;
 import org.osgl.mvc.annotation.GetAction;
+import org.osgl.mvc.annotation.PostAction;
 
+import javax.inject.Inject;
+import javax.validation.Valid;
 import java.util.Date;
 
 /**
@@ -23,6 +27,22 @@ import java.util.Date;
  */
 @SuppressWarnings("unused")
 public class AppEntry extends Controller.Util {
+
+    @Inject
+    private ActionContext context;
+
+    @GetAction("/~sign-up~")
+    public void signUpForm() {
+
+    }
+
+    @PostAction("/~sign-up~")
+    public LoginForm signUp(@Valid LoginForm form) {
+        if (context.hasViolation()) {
+            throw new IllegalArgumentException(context.violationMessage());
+        }
+        return form;
+    }
 
     @GetAction
     public void home(@DefaultValue("World") String who) {
